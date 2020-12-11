@@ -149,5 +149,8 @@
       }
     }
   },
-  "defaultProject": "notes-frontend"
+  "defaultProject": "notes-frontend",
+  "cli": {
+    "analytics": "53e493ad-710b-4fa5-a9fc-2d30f0b0b4a0"
+  }
 }

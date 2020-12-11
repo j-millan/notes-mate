@@ -1,0 +1,25 @@
+<div class="main-container">
+  <div class="search-bar-container">
+    <div class="field">
+      <p class="control has-icons-left">
+        <input type="text" class="input" placeholder="Filter" (keyup)="filter($any($event.target).value)">
+        <span class="icon is-small is-left">
+          <i class="fas fa-search"></i>
+        </span>
+      </p>
+    </div>
+  </div>
+  
+  <div class="notes-list" [@listAnim]>
+    <p class="has-text-grey d-block has-text-centered" *ngIf="!filteredNotes || !filteredNotes.length">Nothing to show here.</p>
+    <app-note-card 
+      *ngFor="let note of filteredNotes; index as id" 
+      [title]="note.title" 
+      [body]="note.body" 
+      [noteId]="id"
+      [@itemAnim]
+      (delete)="deleteNote(id)"></app-note-card>
+  </div>
+  
+  <button class="button is-small is-primary floating-add-button" [routerLink]="['/new']">+ ADD</button>
+</div>
