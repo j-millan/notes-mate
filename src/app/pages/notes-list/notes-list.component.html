@@ -2,6 +2,7 @@
   <div class="search-bar-container">
     <div class="field">
       <p class="control has-icons-left">
+
         <input type="text" class="input" placeholder="Filter" (keyup)="filter($any($event.target).value)">
         <span class="icon is-small is-left">
           <i class="fas fa-search"></i>
@@ -9,7 +10,7 @@
       </p>
     </div>
   </div>
-  
+
   <div class="notes-list" [@listAnim]>
     <p class="has-text-grey d-block has-text-centered" *ngIf="!filteredNotes || !filteredNotes.length">Nothing to show here.</p>
     <app-note-card 
